@@ -4,9 +4,9 @@
       <div class="toolbar" id="toolbar">
         <div content="标题"
              :class="[toolStates.Paragraph == 1 ? 'tool-bar_selected' : '', toolStates.Paragraph == -1 ? 'tool-bar_disabled' : '' ]">
-          <svg-icon v-if="toolStates.Paragraph === 1" icon-class="title" :autoStyle="{width:'20px',height:'29px'}"
+          <svg-icon v-if="toolStates.Paragraph === 1" icon-class="header" :autoStyle="{width:'20px',height:'29px'}"
                     @click.native="ueDisParagraph()"></svg-icon>
-          <svg-icon v-else icon-class="title" :autoStyle="{width:'20px',height:'29px'}"
+          <svg-icon v-else icon-class="header" :autoStyle="{width:'20px',height:'29px'}"
                     @click.native="ueParagraph()"></svg-icon>
         </div>
         <div content="加粗"
@@ -258,10 +258,11 @@ export default {
   }
 
   .toolbar {
+    padding: 5px 10px 5px 20px;
     border-bottom: 1px solid #e9e9e9;
+    background-color: rgba(128, 128, 128, 0.02);
     border-radius: 0;
     box-shadow: none;
-    padding: 5px 10px 5px 20px;
     z-index: 1000;
     width: 900px;
     display: flex;
@@ -284,6 +285,7 @@ export default {
 
   .toolbar .tool-bar_selected svg {
     background-color: #fff;
+    color: rgb(0, 102, 204)
   }
 
   .toolbar .tool-bar_disabled svg {
